@@ -1,0 +1,70 @@
+# Versão da sintaxe do Docker Compose.
+version: '3.8'
+
+# Definição de todos os serviços (contêineres) da nossa aplicação.
+services:
+
+  # --- API Gateway e Balanceador de Carga ---
+  nginx:
+    # Constrói a imagem do NGINX a partir do Dockerfile localizado no diretório ./nginx
+    build: ./nginx
+    # Nome do contêiner para facilitar a identificação.
+    container_name: nginx_gateway
+    # Mapeia a porta 8080 da sua máquina local para a porta 80 dentro do contêiner NGINX.
+    # Este será o único ponto de entrada para toda a aplicação.
+    ports:
+      - "8080:80"
+    # Conecta o NGINX à nossa rede customizada.
+    networks:
+      - plataforma-net
+    # Garante que o NGINX só inicie depois que os outros serviços estiverem de pé.
+    depends_on:
+      - servico-cursos-1
+      - servico-cursos-2
+      - servico-alunos
+      - servico-inscricoes
+
+  # --- Microserviço de Cursos (Instância 1) ---
+  servico-cursos-1:
+    # Constrói a imagem a partir do Dockerfile localizado no diretório ./servico-cursos
+    build: ./Servico-Cursos
+    container_name: servico-cursos-1
+    # Define a variável de ambiente PORT para 8081. O Spring Boot lerá essa variável.
+    environment:
+      - PORT=8081
+    networks:
+      - plataforma-net
+
+  # --- Microserviço de Cursos (Instância 2 - Réplica) ---
+  servico-cursos-2:
+    # Constrói a imagem a partir do mesmo Dockerfile, criando uma réplica perfeita.
+    build: ./Servico-Cursos
+    container_name: servico-cursos-2
+    # A variável de ambiente também é 8081, pois a porta só precisa ser única DENTRO do contêiner.
+    environment:
+      - PORT=8081
+    networks:
+      - plataforma-net
+
+  # --- Microserviço de Alunos ---
+  servico-alunos:
+    build: ./Servico-Alunos
+    container_name: servico-alunos
+    environment:
+      - PORT=8082
+    networks:
+      - plataforma-net
+
+  # --- Microserviço de Inscrições ---
+  servico-inscricoes:
+    build: ./Servico-Inscricoes
+    container_name: servico-inscricoes
+    environment:
+      - PORT=8083
+    networks:
+      - plataforma-net
+
+# Definição da rede customizada para permitir a comunicação entre os contêineres.
+networks:
+  plataforma-net:
+    driver: bridge
