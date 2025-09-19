@@ -1,7 +1,7 @@
-package servicosAluno.controller;
+package servicosaluno.controller;
 
-import com.servicosAluno.entity.Aluno;
-import com.servicosAluno.repository.AlunoRepository;
+import servicosaluno.entity.Aluno;
+import servicosaluno.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;

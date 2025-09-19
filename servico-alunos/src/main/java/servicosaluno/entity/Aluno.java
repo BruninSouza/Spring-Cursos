@@ -1,4 +1,4 @@
-package servicosAluno.entity;
+package servicosaluno.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +16,6 @@ public class Aluno {
     private UUID id;
     private String nome;
     private String email;
-    private String senha; // Em um projeto real, isso seria um hash
+    private String senha;
     private LocalDateTime dataCadastro = LocalDateTime.now();
 }
