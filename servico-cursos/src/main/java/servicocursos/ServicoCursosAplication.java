@@ -1,4 +1,4 @@
-package servicoCursos;
+package servicocursos;
 
 public class ServicoCursosAplication {
 }
