@@ -4,6 +4,7 @@ services:
 
   nginx:
     build: ./nginx
+    restart: always
     container_name: nginx_gateway
     ports:
       - "8080:80"
@@ -16,7 +17,7 @@ services:
       - servico-inscricoes
 
   servico-cursos-1:
-    build: ./Servico-Cursos
+    build: ./servico-cursos
     container_name: servico-cursos-1
     environment:
       - PORT=8081
@@ -24,7 +25,7 @@ services:
       - plataforma-net
 
   servico-cursos-2:
-    build: ./Servico-Cursos
+    build: ./servico-cursos
     container_name: servico-cursos-2
     environment:
       - PORT=8081
@@ -32,7 +33,7 @@ services:
       - plataforma-net
 
   servico-alunos:
-    build: ./Servico-Alunos
+    build: ./servico-alunos
     container_name: servico-alunos
     environment:
       - PORT=8082
@@ -40,7 +41,7 @@ services:
       - plataforma-net
 
   servico-inscricoes:
-    build: ./Servico-Inscricoes
+    build: ./servico-inscricoes
     container_name: servico-inscricoes
     environment:
       - PORT=8083
@@ -50,3 +51,4 @@ services:
 networks:
   plataforma-net:
     driver: bridge
+
