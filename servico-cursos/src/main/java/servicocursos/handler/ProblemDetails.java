@@ -1,6 +1,7 @@
-package servicosaluno.handler;
+package servicocursos.handler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.net.URI;
 import java.time.Instant;
 

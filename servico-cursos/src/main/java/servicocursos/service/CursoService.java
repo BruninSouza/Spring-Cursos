@@ -2,6 +2,7 @@ package servicocursos.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import servicocursos.dto.AulaDTO;
 import servicocursos.dto.CursoDTO;
 import servicocursos.dto.ModuloDTO;
@@ -11,6 +12,7 @@ import servicocursos.entity.Modulo;
 import servicocursos.repository.AulaRepository;
 import servicocursos.repository.CursoRepository;
 import servicocursos.repository.ModuloRepository;
+import servicocursos.exception.ResourceNotFoundException;
 
 import java.util.List;
 import java.util.UUID;
@@ -55,7 +57,7 @@ public class CursoService {
 
     public void deleteCurso(UUID id) {
         if (!cursoRepository.existsById(id)) {
-            throw new RuntimeException("Curso não encontrado com o id: " + id);
+            throw new ResourceNotFoundException("Curso não encontrado com o id: " + id);
         }
         cursoRepository.deleteById(id);
     }
@@ -85,12 +87,12 @@ public class CursoService {
 
     private Curso findCursoById(UUID id) {
         return cursoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Curso não encontrado com o id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Curso não encontrado com o id: " + id));
     }
 
     private Modulo findModuloById(UUID id) {
         return moduloRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Módulo não encontrado com o id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Módulo não encontrado com o id: " + id));
     }
 
     private CursoDTO toDTO(Curso curso) {
