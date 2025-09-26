@@ -1,4 +1,4 @@
-package servicocursos.handler;
+package servicoinscricoes.handler;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import servicocursos.exception.ResourceNotFoundException;
+import servicoinscricoes.exception.ResourceNotFoundException;
 
 import java.net.URI;
 import java.time.Instant;

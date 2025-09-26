@@ -1,4 +1,4 @@
-package servicocursos.handler;
+package servicoinscricoes.handler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

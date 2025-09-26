@@ -5,6 +5,7 @@ import servicoinscricoes.dto.InscricaoStatusUpdateDTO;
 import servicoinscricoes.entity.Inscricao;
 import servicoinscricoes.entity.StatusInscricao;
 import servicoinscricoes.repository.InscricaoRepository;
+import servicoinscricoes.exception.ResourceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,14 +53,14 @@ public class InscricaoService {
 
     public void deleteInscricao(UUID id) {
         if (!inscricaoRepository.existsById(id)) {
-            throw new RuntimeException("Inscrição não encontrada com o id: " + id);
+            throw new ResourceNotFoundException("Inscrição não encontrada com o id: " + id);
         }
         inscricaoRepository.deleteById(id);
     }
 
     private Inscricao findInscricaoById(UUID id) {
         return inscricaoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Inscrição não encontrada com o id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Inscrição não encontrada com o id: " + id));
     }
 
     private InscricaoDTO toDTO(Inscricao inscricao) {
