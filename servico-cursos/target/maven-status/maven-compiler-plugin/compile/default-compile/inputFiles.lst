@@ -3,6 +3,8 @@
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/ServicoCursosApplication.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/entity/Modulo.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/controller/CursoController.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/dto/CursoDTO.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/repository/CursoRepository.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/service/CursoService.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/repository/ModuloRepository.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/entity/Curso.java

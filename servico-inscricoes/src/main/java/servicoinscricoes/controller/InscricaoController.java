@@ -1,39 +1,33 @@
 package servicoinscricoes.controller;
 
-import servicoinscricoes.entity.Inscricao;
-import servicoinscricoes.repository.InscricaoRepository;
-
+import jakarta.validation.Valid;
+import servicoinscricoes.dto.InscricaoDTO;
+import servicoinscricoes.service.InscricaoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.Value;
 
-import java.util.List;
-import java.util.UUID;
+import java.net.URI;
 
 @RestController
 @RequestMapping("/api/inscricoes")
 public class InscricaoController {
+
+    @Autowired
+    private InscricaoService inscricaoService;
 
     @Value("${server.port}")
     private String serverPort;
 
     @GetMapping("/ping")
     public String ping() {
-        return "Serviço de Inscrições respondendo da porta: " + serverPort;
+        return "Serviço de Inscrições a responder da porta: " + serverPort;
     }
-
-    @Autowired
-    private InscricaoRepository inscricaoRepository;
 
     @PostMapping
-    public Inscricao criarInscricao(@RequestBody Inscricao inscricao) {
-        return inscricaoRepository.save(inscricao);
-    }
-
-    @GetMapping("/aluno/{alunoId}")
-    public ResponseEntity<List<Inscricao>> buscarInscricoesPorAluno(@PathVariable UUID alunoId) {
-        List<Inscricao> inscricoes = inscricaoRepository.findByAlunoId(alunoId);
-        return ResponseEntity.ok(inscricoes);
+    public ResponseEntity<InscricaoDTO> criarInscricao(@Valid @RequestBody InscricaoDTO inscricaoDTO) {
+        InscricaoDTO novaInscricao = inscricaoService.createInscricao(inscricaoDTO);
+        return ResponseEntity.created(URI.create("/api/inscricoes/" + novaInscricao.id())).body(novaInscricao);
     }
 }

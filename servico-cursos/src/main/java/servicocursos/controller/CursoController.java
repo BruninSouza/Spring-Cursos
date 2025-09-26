@@ -1,13 +1,14 @@
 package servicocursos.controller;
 
-import servicocursos.entity.Curso;
-import servicocursos.repository.CursoRepository;
-
+import jakarta.validation.Valid;
+import servicocursos.dto.CursoDTO;
+import servicocursos.service.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,32 +17,40 @@ import java.util.UUID;
 public class CursoController {
 
     @Autowired
-    private CursoRepository cursoRepository;
+    private CursoService cursoService;
 
     @Value("${server.port}")
     private String serverPort;
 
-    // Endpoint para a demonstração de balanceamento de carga
     @GetMapping("/ping")
     public String ping() {
-        return "Serviço de Cursos respondendo da porta: " + serverPort;
+        return "Serviço de Cursos a responder da porta: " + serverPort;
     }
 
     @PostMapping
-    public Curso criarCurso(@RequestBody Curso curso) {
-        return cursoRepository.save(curso);
+    public ResponseEntity<CursoDTO> criarCurso(@Valid @RequestBody CursoDTO cursoDTO) {
+        CursoDTO novoCurso = cursoService.createCurso(cursoDTO);
+        return ResponseEntity.created(URI.create("/api/cursos/" + novoCurso.id())).body(novoCurso);
     }
 
     @GetMapping
-    public List<Curso> listarCursos() {
-        System.out.println("LOG: Listando cursos na instância da porta " + serverPort);
-        return cursoRepository.findAll();
+    public ResponseEntity<List<CursoDTO>> listarCursos() {
+        return ResponseEntity.ok(cursoService.getAllCursos());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Curso> buscarCursoPorId(@PathVariable UUID id) {
-        return cursoRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<CursoDTO> buscarCursoPorId(@PathVariable UUID id) {
+        return ResponseEntity.ok(cursoService.getCursoById(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<CursoDTO> atualizarCurso(@PathVariable UUID id, @Valid @RequestBody CursoDTO cursoDTO) {
+        return ResponseEntity.ok(cursoService.updateCurso(id, cursoDTO));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarCurso(@PathVariable UUID id) {
+        cursoService.deleteCurso(id);
+        return ResponseEntity.noContent().build();
     }
 }

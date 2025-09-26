@@ -1,4 +1,6 @@
+servicosaluno/dto/AlunoDTO.class
+servicosaluno/repository/AlunoRepository.class
 servicosaluno/ServicoAlunosApplication.class
 servicosaluno/entity/Aluno.class
 servicosaluno/controller/AlunoController.class
-servicosaluno/repository/AlunoRepository.class
+servicosaluno/service/AlunoService.class

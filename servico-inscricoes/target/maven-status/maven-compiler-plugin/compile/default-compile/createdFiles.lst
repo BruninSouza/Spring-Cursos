@@ -1,5 +1,8 @@
+servicoinscricoes/dto/InscricaoDTO.class
+servicoinscricoes/ServicoInscricoesApplication.class
+servicoinscricoes/dto/InscricaoStatusUpdateDTO.class
 servicoinscricoes/entity/Inscricao.class
 servicoinscricoes/entity/StatusInscricao.class
 servicoinscricoes/repository/InscricaoRepository.class
-servicoinscricoes/ServicoInscricoesApplication.class
+servicoinscricoes/service/InscricaoService.class
 servicoinscricoes/controller/InscricaoController.class
