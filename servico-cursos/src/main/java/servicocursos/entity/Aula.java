@@ -1,6 +1,6 @@
 package servicocursos.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.UUID;
@@ -17,6 +17,6 @@ public class Aula {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "modulo_id")
-    @JsonIgnore
+    @JsonBackReference
     private Modulo modulo;
 }

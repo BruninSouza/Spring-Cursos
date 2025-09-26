@@ -1,10 +1,16 @@
 package servicocursos.service;
 
-import servicocursos.dto.CursoDTO;
-import servicocursos.entity.Curso;
-import servicocursos.repository.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import servicocursos.dto.AulaDTO;
+import servicocursos.dto.CursoDTO;
+import servicocursos.dto.ModuloDTO;
+import servicocursos.entity.Aula;
+import servicocursos.entity.Curso;
+import servicocursos.entity.Modulo;
+import servicocursos.repository.AulaRepository;
+import servicocursos.repository.CursoRepository;
+import servicocursos.repository.ModuloRepository;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,13 +21,16 @@ public class CursoService {
 
     @Autowired
     private CursoRepository cursoRepository;
+    @Autowired
+    private ModuloRepository moduloRepository;
+    @Autowired
+    private AulaRepository aulaRepository;
 
     public CursoDTO createCurso(CursoDTO cursoDTO) {
         Curso curso = new Curso();
         curso.setTitulo(cursoDTO.titulo());
         curso.setDescricao(cursoDTO.descricao());
         curso.setInstrutor(cursoDTO.instrutor());
-
         Curso novoCurso = cursoRepository.save(curso);
         return toDTO(novoCurso);
     }
@@ -31,19 +40,15 @@ public class CursoService {
     }
 
     public CursoDTO getCursoById(UUID id) {
-        Curso curso = cursoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Curso não encontrado com o id: " + id));
+        Curso curso = findCursoById(id);
         return toDTO(curso);
     }
 
     public CursoDTO updateCurso(UUID id, CursoDTO cursoDTO) {
-        Curso curso = cursoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Curso não encontrado com o id: " + id));
-
+        Curso curso = findCursoById(id);
         curso.setTitulo(cursoDTO.titulo());
         curso.setDescricao(cursoDTO.descricao());
         curso.setInstrutor(cursoDTO.instrutor());
-
         Curso cursoAtualizado = cursoRepository.save(curso);
         return toDTO(cursoAtualizado);
     }
@@ -55,8 +60,49 @@ public class CursoService {
         cursoRepository.deleteById(id);
     }
 
+    public ModuloDTO adicionarModulo(UUID cursoId, ModuloDTO moduloDTO) {
+        Curso curso = findCursoById(cursoId);
+
+        Modulo modulo = new Modulo();
+        modulo.setTitulo(moduloDTO.titulo());
+        modulo.setCurso(curso); // Associa o módulo ao curso
+
+        Modulo novoModulo = moduloRepository.save(modulo);
+        return toDTO(novoModulo);
+    }
+
+    public AulaDTO adicionarAula(UUID moduloId, AulaDTO aulaDTO) {
+        Modulo modulo = findModuloById(moduloId);
+
+        Aula aula = new Aula();
+        aula.setTitulo(aulaDTO.titulo());
+        aula.setUrlVideo(aulaDTO.urlVideo());
+        aula.setModulo(modulo); // Associa a aula ao módulo
+
+        Aula novaAula = aulaRepository.save(aula);
+        return toDTO(novaAula);
+    }
+
+    private Curso findCursoById(UUID id) {
+        return cursoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Curso não encontrado com o id: " + id));
+    }
+
+    private Modulo findModuloById(UUID id) {
+        return moduloRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Módulo não encontrado com o id: " + id));
+    }
+
     private CursoDTO toDTO(Curso curso) {
         return new CursoDTO(curso.getId(), curso.getTitulo(), curso.getDescricao(), curso.getInstrutor());
+    }
+
+    private ModuloDTO toDTO(Modulo modulo) {
+        return new ModuloDTO(modulo.getId(), modulo.getTitulo());
+    }
+
+    private AulaDTO toDTO(Aula aula) {
+        return new AulaDTO(aula.getId(), aula.getTitulo(), aula.getUrlVideo());
     }
 }
 

@@ -1,5 +1,6 @@
 package servicocursos.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,5 +20,6 @@ public class Curso {
     private String instrutor;
 
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Modulo> modulos = new ArrayList<>();
 }

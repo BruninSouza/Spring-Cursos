@@ -1,10 +1,4 @@
-servicocursos/repository/ModuloRepository.class
-servicocursos/entity/Aula.class
-servicocursos/service/CursoService.class
-servicocursos/ServicoCursosApplication.class
-servicocursos/dto/CursoDTO.class
-servicocursos/repository/CursoRepository.class
-servicocursos/entity/Curso.class
-servicocursos/controller/CursoController.class
-servicocursos/entity/Modulo.class
-servicocursos/repository/AulaRepository.class
+servicocursos\entity\Aula.class
+servicocursos\entity\Modulo.class
+servicocursos\repository\AulaRepository.class
+servicocursos\entity\Curso.class
