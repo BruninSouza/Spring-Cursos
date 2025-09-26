@@ -1,5 +1,6 @@
 package servicosaluno.service;
 
+import servicosaluno.exception.ResourceNotFoundException;
 import servicosaluno.dto.AlunoDTO;
 import servicosaluno.entity.Aluno;
 import servicosaluno.repository.AlunoRepository;
@@ -31,13 +32,13 @@ public class AlunoService {
 
     public AlunoDTO getAlunoById(UUID id) {
         Aluno aluno = alunoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Aluno não encontrado com o id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException ("Aluno não encontrado com o id: " + id));
         return toDTO(aluno);
     }
 
     public AlunoDTO updateAluno(UUID id, AlunoDTO alunoDTO) {
         Aluno aluno = alunoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Aluno não encontrado com o id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException ("Aluno não encontrado com o id: " + id));
 
         aluno.setNome(alunoDTO.nome());
         aluno.setEmail(alunoDTO.email());
@@ -48,7 +49,7 @@ public class AlunoService {
 
     public void deleteAluno(UUID id) {
         if (!alunoRepository.existsById(id)) {
-            throw new RuntimeException("Aluno não encontrado com o id: " + id);
+            throw new ResourceNotFoundException ("Aluno não encontrado com o id: " + id);
         }
         alunoRepository.deleteById(id);
     }
