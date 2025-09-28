@@ -44,6 +44,8 @@ services:
     container_name: servico-cursos-1
     environment:
       - PORT=8081
+    ports:
+      - "8081:8081"
     networks:
       - plataforma-net
     depends_on:
@@ -55,6 +57,8 @@ services:
     container_name: servico-cursos-2
     environment:
       - PORT=8081
+    ports:
+      - "8084:8081"
     networks:
       - plataforma-net
     depends_on:
@@ -64,6 +68,8 @@ services:
   servico-alunos:
     build: ./servico-alunos
     container_name: servico-alunos
+    ports:
+      - "8082:8082"
     environment:
       - PORT=8082
     networks:
@@ -75,6 +81,8 @@ services:
   servico-inscricoes:
     build: ./servico-inscricoes
     container_name: servico-inscricoes
+    ports:
+      - "8083:8083"
     environment:
       - PORT=8083
     networks:
