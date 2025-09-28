@@ -1,6 +1,25 @@
 version: '3.8'
 
 services:
+  postgres:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_MULTIPLE_DBS: alunosdb,cursosdb,inscricoesdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres-init:/docker-entrypoint-initdb.d
+    networks:
+      - plataforma-net
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U admin -d cursosdb" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   nginx:
     build: ./nginx
@@ -11,10 +30,14 @@ services:
     networks:
       - plataforma-net
     depends_on:
-      - servico-cursos-1
-      - servico-cursos-2
-      - servico-alunos
-      - servico-inscricoes
+      servico-cursos-1:
+        condition: service_started
+      servico-cursos-2:
+        condition: service_started
+      servico-alunos:
+        condition: service_started
+      servico-inscricoes:
+        condition: service_started
 
   servico-cursos-1:
     build: ./servico-cursos
@@ -23,6 +46,9 @@ services:
       - PORT=8081
     networks:
       - plataforma-net
+    depends_on:
+      postgres:
+        condition: service_healthy
 
   servico-cursos-2:
     build: ./servico-cursos
@@ -31,6 +57,9 @@ services:
       - PORT=8081
     networks:
       - plataforma-net
+    depends_on:
+      postgres:
+        condition: service_healthy
 
   servico-alunos:
     build: ./servico-alunos
@@ -39,6 +68,9 @@ services:
       - PORT=8082
     networks:
       - plataforma-net
+    depends_on:
+      postgres:
+        condition: service_healthy
 
   servico-inscricoes:
     build: ./servico-inscricoes
@@ -47,8 +79,20 @@ services:
       - PORT=8083
     networks:
       - plataforma-net
+    depends_on:
+      servico-alunos:
+        condition: service_started
+      servico-cursos-1:
+          condition: service_started
+      servico-cursos-2:
+        condition: service_started
+      postgres:
+        condition: service_healthy
 
 networks:
   plataforma-net:
     driver: bridge
+
+volumes:
+  postgres_data:
 
