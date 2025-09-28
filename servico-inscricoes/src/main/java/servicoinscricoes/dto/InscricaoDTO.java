@@ -1,7 +1,8 @@
 package servicoinscricoes.dto;
 
 import jakarta.validation.constraints.NotNull;
-import servicoinscricoes.entity.StatusInscricao;
+import servicoinscricoes.model.StatusInscricao;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -15,7 +16,9 @@ public record InscricaoDTO(
         @NotNull(message = "O ID do curso é obrigatório.")
         UUID cursoId,
 
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
         LocalDateTime dataInscricao,
+
         StatusInscricao status
 ) {
 }

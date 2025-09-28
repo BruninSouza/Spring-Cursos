@@ -5,18 +5,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dd62acf-6137-4595-b850-ac9e2b8903cc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servicocursos/dto/AulaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servicocursos/dto/ModuloDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/controller/AlunoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/dto/RegisterDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/exception/ErroResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/exception/ItemNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/exception/ValidationError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/model/Aluno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servicocursos/exception/ErroResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servicocursos/exception/ItemNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servicocursos/exception/ValidationError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servicocursos/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servicocursos/security/WebSecurity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/exception/ErroResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/exception/ItemNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/exception/ValidationError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/security/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/security/SecurityConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/security/WebSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/ServicoAlunosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/ServicoAlunosApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/controller/AlunoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/dto/AlunoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/dto/AlunoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/dto/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/dto/LoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/entity/Aluno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/handler/ProblemDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/repository/AlunoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/repository/AlunoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/security/JWTAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/security/JWTAuthorizationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/security/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/security/SecurityConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/security/SecurityConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/security/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/security/WebSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicosaluno/service/AlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/java/servicoalunos/service/AlunoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-alunos/target/servico-alunos-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-alunos/target/servico-alunos-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/controller/CursoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/entity/Aula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/entity/Aula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/entity/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/entity/Curso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/entity/Modulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/entity/Modulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/entity/Aula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/model/Aula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/entity/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/model/Curso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/entity/Modulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/model/Modulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/handler/ProblemDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/repository/AulaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/repository/AulaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/repository/CursoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/repository/CursoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/repository/ModuloRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/repository/ModuloRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servicocursos/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicocursos/service/CursoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/servico-cursos-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/servico-cursos-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/controller/InscricaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/controller/InscricaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/dto/InscricaoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/dto/InscricaoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/dto/InscricaoStatusUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/dto/InscricaoStatusUpdateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/entity/Inscricao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/model/Inscricao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/entity/StatusInscricao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/model/StatusInscricao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/handler/ProblemDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/repository/InscricaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/repository/InscricaoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/service/InscricaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/java/servicoinscricoes/service/InscricaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servico-inscricoes/target/servico-inscricoes-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../servico-inscricoes/target/servico-inscricoes-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,21 +99,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.Dockerfile.executor": "Run",
-    "Maven.servico-cursos [org.springframework.boot:spring-boot-maven-plugin:3.2.5:run].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "desenvolvimento",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/bruno.souza/IdeaProjects/Spring-Cursos/servico-cursos",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.servico-cursos [org.springframework.boot:spring-boot-maven-plugin:3.2.5:run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;desenvolvimento&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/bruno.souza/IdeaProjects/Spring-Cursos/servico-cursos&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
-      <method v="2" />
+}</component>
+  <component name="RunManager" selected="Docker.Dockerfile">
+    <configuration name="ServicoCursosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="servico-cursos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="servicocursos.ServicoCursosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
@@ -58,6 +129,20 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -67,7 +152,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1758280822082</updated>
+      <workItem from="1759022899907" duration="21000" />
+      <workItem from="1759030496382" duration="6000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

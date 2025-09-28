@@ -6,13 +6,14 @@ import org.springframework.stereotype.Service;
 import servicocursos.dto.AulaDTO;
 import servicocursos.dto.CursoDTO;
 import servicocursos.dto.ModuloDTO;
-import servicocursos.entity.Aula;
-import servicocursos.entity.Curso;
-import servicocursos.entity.Modulo;
+import servicocursos.model.Aula;
+import servicocursos.model.Curso;
+import servicocursos.model.Modulo;
 import servicocursos.repository.AulaRepository;
 import servicocursos.repository.CursoRepository;
 import servicocursos.repository.ModuloRepository;
-import servicocursos.exception.ResourceNotFoundException;
+import servicocursos.exception.ItemNotFoundException;
+import servicocursos.dto.CursoDetalhesDTO;
 
 import java.util.List;
 import java.util.UUID;
@@ -46,6 +47,11 @@ public class CursoService {
         return toDTO(curso);
     }
 
+    public CursoDetalhesDTO getCursoDetalhesById(UUID id) {
+        Curso curso = findCursoById(id);
+        return new CursoDetalhesDTO(curso.getId(), curso.getTitulo());
+    }
+
     public CursoDTO updateCurso(UUID id, CursoDTO cursoDTO) {
         Curso curso = findCursoById(id);
         curso.setTitulo(cursoDTO.titulo());
@@ -57,7 +63,7 @@ public class CursoService {
 
     public void deleteCurso(UUID id) {
         if (!cursoRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Curso não encontrado com o id: " + id);
+            throw new ItemNotFoundException("Curso não encontrado com o id: " + id);
         }
         cursoRepository.deleteById(id);
     }
@@ -67,7 +73,7 @@ public class CursoService {
 
         Modulo modulo = new Modulo();
         modulo.setTitulo(moduloDTO.titulo());
-        modulo.setCurso(curso); // Associa o módulo ao curso
+        modulo.setCurso(curso);
 
         Modulo novoModulo = moduloRepository.save(modulo);
         return toDTO(novoModulo);
@@ -79,7 +85,7 @@ public class CursoService {
         Aula aula = new Aula();
         aula.setTitulo(aulaDTO.titulo());
         aula.setUrlVideo(aulaDTO.urlVideo());
-        aula.setModulo(modulo); // Associa a aula ao módulo
+        aula.setModulo(modulo);
 
         Aula novaAula = aulaRepository.save(aula);
         return toDTO(novaAula);
@@ -87,12 +93,12 @@ public class CursoService {
 
     private Curso findCursoById(UUID id) {
         return cursoRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Curso não encontrado com o id: " + id));
+                .orElseThrow(() -> new ItemNotFoundException("Curso não encontrado com o id: " + id));
     }
 
     private Modulo findModuloById(UUID id) {
         return moduloRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Módulo não encontrado com o id: " + id));
+                .orElseThrow(() -> new ItemNotFoundException("Módulo não encontrado com o id: " + id));
     }
 
     private CursoDTO toDTO(Curso curso) {

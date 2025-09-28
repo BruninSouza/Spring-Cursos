@@ -1,12 +1,18 @@
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\dto\ModuloDTO.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\controller\CursoController.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\dto\AulaDTO.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\entity\Aula.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\repository\ModuloRepository.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\service\CursoService.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\entity\Curso.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\ServicoCursosApplication.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\entity\Modulo.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\repository\AulaRepository.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\dto\CursoDTO.java
-C:\Users\bruno.souza\IdeaProjects\Spring-Cursos\servico-cursos\src\main\java\servicocursos\repository\CursoRepository.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/dto/ModuloDTO.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/repository/CursoRepository.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/exception/ErroResponse.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/service/CursoService.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/repository/ModuloRepository.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/exception/ValidationError.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/dto/CursoDetalhesDTO.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/repository/AulaRepository.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/exception/GlobalExceptionHandler.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/ServicoCursosApplication.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/exception/ItemNotFoundException.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/dto/AulaDTO.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/controller/CursoController.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/model/Aula.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/dto/CursoDTO.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/model/Modulo.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/security/WebSecurity.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-cursos/src/main/java/servicocursos/model/Curso.java

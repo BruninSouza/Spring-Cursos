@@ -1,14 +1,18 @@
 package servicoinscricoes.controller;
 
 import jakarta.validation.Valid;
-import servicoinscricoes.dto.InscricaoDTO;
-import servicoinscricoes.service.InscricaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URI;
+import servicoinscricoes.dto.InscricaoDetalhesDTO;
+import servicoinscricoes.dto.InscricaoDTO;
+import servicoinscricoes.dto.InscricaoStatusUpdateDTO;
+import servicoinscricoes.service.InscricaoService;
+
+import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/inscricoes")
@@ -26,8 +30,28 @@ public class InscricaoController {
     }
 
     @PostMapping
-    public ResponseEntity<InscricaoDTO> criarInscricao(@Valid @RequestBody InscricaoDTO inscricaoDTO) {
-        InscricaoDTO novaInscricao = inscricaoService.createInscricao(inscricaoDTO);
-        return ResponseEntity.created(URI.create("/api/inscricoes/" + novaInscricao.id())).body(novaInscricao);
+    public InscricaoDTO criarInscricao(@Valid @RequestBody InscricaoDTO inscricaoDTO) {
+        return inscricaoService.createInscricao(inscricaoDTO);
+    }
+
+    @GetMapping("/aluno/{alunoId}")
+    public List<InscricaoDetalhesDTO> buscarInscricoesPorAluno(@PathVariable UUID alunoId) {
+        return inscricaoService.getInscricoesByAlunoIdComDetalhes(alunoId);
+    }
+
+    @GetMapping("/{id}")
+    public InscricaoDTO buscarInscricaoPorId(@PathVariable UUID id) {
+        return inscricaoService.getInscricaoById(id);
+    }
+
+    @PutMapping("/{id}/status")
+    public InscricaoDTO atualizarStatusInscricao(@PathVariable UUID id, @Valid @RequestBody InscricaoStatusUpdateDTO statusUpdateDTO) {
+        return inscricaoService.updateStatus(id, statusUpdateDTO.status());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> apagarInscricao(@PathVariable UUID id) {
+        inscricaoService.deleteInscricao(id);
+        return ResponseEntity.noContent().build();
     }
 }

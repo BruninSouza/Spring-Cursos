@@ -1,10 +1,14 @@
 package servicocursos.controller;
 
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import servicocursos.dto.CursoDetalhesDTO;
 import servicocursos.dto.AulaDTO;
 import servicocursos.dto.CursoDTO;
 import servicocursos.dto.ModuloDTO;
@@ -17,6 +21,8 @@ import java.util.UUID;
 @RequestMapping("/api/cursos")
 public class CursoController {
 
+    private static final Logger logger = LoggerFactory.getLogger(CursoController.class);
+
     @Autowired
     private CursoService cursoService;
 
@@ -25,7 +31,13 @@ public class CursoController {
 
     @GetMapping("/ping")
     public String ping() {
+        logger.info("Endpoint /ping foi acedido na instância da porta: {}", serverPort);
         return "Serviço de Cursos a responder da porta: " + serverPort;
+    }
+
+    @GetMapping("/{id}/detalhes")
+    public CursoDetalhesDTO buscarCursoDetalhesPorId(@PathVariable UUID id) {
+        return cursoService.getCursoDetalhesById(id);
     }
 
     @PostMapping
@@ -64,3 +76,4 @@ public class CursoController {
         return cursoService.adicionarAula(moduloId, aulaDTO);
     }
 }
+
