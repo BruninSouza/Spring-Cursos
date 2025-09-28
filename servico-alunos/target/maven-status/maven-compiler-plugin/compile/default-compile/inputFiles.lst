@@ -2,6 +2,7 @@
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/dto/AlunoDetalhesDTO.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/dto/AlunoDTO.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/exception/GlobalExceptionHandler.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/config/OpenApiConfig.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/security/SecurityConstants.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/controller/AuthController.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/ServicoAlunosApplication.java
@@ -14,6 +15,7 @@
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/repository/AlunoRepository.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/security/UserDetailsServiceImpl.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/security/JwtUtil.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/controller/AuthAPI.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/exception/ValidationError.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/exception/ItemNotFoundException.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-alunos/src/main/java/servicoalunos/dto/RegisterDTO.java

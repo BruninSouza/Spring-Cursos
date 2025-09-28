@@ -51,6 +51,7 @@ public class WebSecurity {
                         .requestMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()
                         .requestMatchers(HttpMethod.POST, SecurityConstants.LOGIN_URL).permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/alunos/*/detalhes").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilter(authenticationFilter)

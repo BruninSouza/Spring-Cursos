@@ -5,6 +5,7 @@ servicocursos/model/Modulo.class
 servicocursos/ServicoCursosApplication.class
 servicocursos/security/WebSecurity.class
 servicocursos/exception/ErroResponse.class
+servicocursos/config/OpenApiConfig.class
 servicocursos/exception/ValidationError.class
 servicocursos/service/CursoService.class
 servicocursos/dto/CursoDTO.class

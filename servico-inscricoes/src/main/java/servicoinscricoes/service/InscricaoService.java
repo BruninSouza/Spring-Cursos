@@ -23,7 +23,9 @@ import servicoinscricoes.exception.ItemNotFoundException;
 import servicoinscricoes.repository.InscricaoRepository;
 import servicoinscricoes.exception.BusinessException;
 import servicoinscricoes.security.SecurityConstants;
+import servicoinscricoes.dto.AlunoInscritoDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -144,6 +146,24 @@ public class InscricaoService {
     private Inscricao findInscricaoById(UUID id) {
         return inscricaoRepository.findById(id)
                 .orElseThrow(() -> new ItemNotFoundException("Inscrição não encontrada com o id: " + id));
+    }
+
+    public List<AlunoInscritoDTO> getAlunosInscritosByCursoId(UUID cursoId) {
+        List<Inscricao> inscricoes = inscricaoRepository.findByCursoId(cursoId);
+
+        if (inscricoes.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        return inscricoes.stream().map(inscricao -> {
+            AlunoDetalhesDTO aluno = getAlunoDetalhes(inscricao.getAlunoId());
+
+            return new AlunoInscritoDTO(
+                    aluno.id(),
+                    aluno.nome(),
+                    inscricao.getDataInscricao()
+            );
+        }).collect(Collectors.toList());
     }
 
     private InscricaoDTO toDTO(Inscricao inscricao) {

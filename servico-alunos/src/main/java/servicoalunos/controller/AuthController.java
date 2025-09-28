@@ -11,7 +11,7 @@ import servicoalunos.service.AlunoService;
 
 @RestController
 @RequestMapping("/api/auth")
-public class AuthController {
+public class AuthController implements AuthAPI {
 
     private final AlunoService alunoService;
 
@@ -19,6 +19,7 @@ public class AuthController {
         this.alunoService = alunoService;
     }
 
+    @Override
     @PostMapping("/register")
     public ResponseEntity<Void> register(@Valid @RequestBody RegisterDTO registerDTO) {
         alunoService.registerUser(registerDTO);

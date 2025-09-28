@@ -1,5 +1,6 @@
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/exception/ValidationError.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/model/StatusInscricao.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/dto/AlunoInscritoDTO.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/repository/InscricaoRepository.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/service/InscricaoService.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/controller/InscricaoController.java
@@ -10,6 +11,7 @@
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/dto/AlunoDetalhesDTO.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/exception/CustomAuthenticationEntryPoint.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/dto/InscricaoStatusUpdateDTO.java
+/home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/config/OpenApiConfig.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/exception/BusinessException.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/dto/InscricaoDetalhesDTO.java
 /home/bruno-souza/Área de trabalho/Pasta/projetos/projetos-faculdade/Spring-Cursos/servico-inscricoes/src/main/java/servicoinscricoes/exception/ErroResponse.java

@@ -8,4 +8,5 @@ import java.util.UUID;
 public interface InscricaoRepository extends JpaRepository<Inscricao, UUID> {
     List<Inscricao> findByAlunoId(UUID alunoId);
     boolean existsByAlunoIdAndCursoId(UUID alunoId, UUID cursoId);
+    List<Inscricao> findByCursoId(UUID cursoId);
 }

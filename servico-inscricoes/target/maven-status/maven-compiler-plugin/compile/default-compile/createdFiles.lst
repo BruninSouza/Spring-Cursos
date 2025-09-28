@@ -1,6 +1,7 @@
 servicoinscricoes/dto/InscricaoDTO.class
 servicoinscricoes/security/SecurityConstants.class
 servicoinscricoes/ServicoInscricoesApplication.class
+servicoinscricoes/dto/AlunoInscritoDTO.class
 servicoinscricoes/exception/GlobalExceptionHandler.class
 servicoinscricoes/security/JWTAuthorizationFilter.class
 servicoinscricoes/repository/InscricaoRepository.class
@@ -12,6 +13,7 @@ servicoinscricoes/service/InscricaoService.class
 servicoinscricoes/dto/InscricaoStatusUpdateDTO.class
 servicoinscricoes/model/Inscricao.class
 servicoinscricoes/dto/InscricaoDetalhesDTO.class
+servicoinscricoes/config/OpenApiConfig.class
 servicoinscricoes/dto/CursoDetalhesDTO.class
 servicoinscricoes/exception/BusinessException.class
 servicoinscricoes/security/JwtUtil.class

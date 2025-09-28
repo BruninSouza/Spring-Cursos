@@ -1,11 +1,13 @@
 servicoalunos/exception/GlobalExceptionHandler.class
 servicoalunos/exception/ItemNotFoundException.class
 servicoalunos/dto/AlunoDTO.class
+servicoalunos/config/OpenApiConfig.class
 servicoalunos/model/Aluno.class
 servicoalunos/security/UserDetailsServiceImpl.class
 servicoalunos/security/WebSecurity.class
 servicoalunos/controller/AuthController.class
 servicoalunos/controller/AlunoController.class
+servicoalunos/controller/AuthAPI.class
 servicoalunos/dto/LoginDTO.class
 servicoalunos/security/SecurityConstants.class
 servicoalunos/exception/ValidationError.class
