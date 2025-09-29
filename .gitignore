@@ -24,4 +24,6 @@ hs_err_pid*
 replay_pid*
 
 # evitando que seja upados arquivos target dos microserviços
-/target/
+servico-alunos/target/
+servico-cursos/target/
+servico-inscricoes/target/
