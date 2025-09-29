@@ -1,6 +1,5 @@
 package servicoalunos.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,11 +18,14 @@ import java.util.stream.Collectors;
 @Service
 public class AlunoService {
 
-    @Autowired
-    private AlunoRepository alunoRepository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final AlunoRepository alunoRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    public AlunoService(AlunoRepository alunoRepository, PasswordEncoder passwordEncoder) {
+        this.alunoRepository = alunoRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     public void registerUser(RegisterDTO registerDTO) {
         Aluno aluno = new Aluno();
@@ -37,14 +39,6 @@ public class AlunoService {
     public UserDetails findUserDetailsByEmail(String email) {
         return alunoRepository.findByEmail(email)
                 .orElseThrow(() -> new ItemNotFoundException("Utilizador não encontrado com o email: " + email));
-    }
-
-    public AlunoDTO createAluno(AlunoDTO alunoDTO) {
-        Aluno aluno = new Aluno();
-        aluno.setNome(alunoDTO.nome());
-        aluno.setEmail(alunoDTO.email());
-        Aluno novoAluno = alunoRepository.save(aluno);
-        return toDTO(novoAluno);
     }
 
     public List<AlunoDTO> getAllAlunos() {

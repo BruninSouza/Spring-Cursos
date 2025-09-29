@@ -7,7 +7,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +23,12 @@ import java.util.UUID;
 @Tag(name = "Alunos", description = "Endpoints para gerir os dados dos alunos")
 @SecurityRequirement(name = "bearerAuth")
 public class AlunoController {
-    @Autowired
-    private AlunoService alunoService;
+
+    private final AlunoService alunoService;
+
+    public AlunoController(AlunoService alunoService) {
+        this.alunoService = alunoService;
+    }
 
     @Value("${server.port}")
     private String serverPort;
@@ -34,17 +37,6 @@ public class AlunoController {
     @GetMapping("/ping")
     public String ping() {
         return "Serviço de Alunos a responder da porta: " + serverPort;
-    }
-
-    @Operation(summary = "Cria um novo aluno", description = "Cria um novo aluno no banco de dados. Este endpoint é usado internamente, o registo de utilizadores deve ser feito através do /api/auth/register.")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Aluno criado com sucesso"),
-            @ApiResponse(responseCode = "422", description = "Dados inválidos fornecidos no corpo da requisição"),
-            @ApiResponse(responseCode = "403", description = "Acesso negado. Requer autenticação.")
-    })
-    @PostMapping
-    public AlunoDTO criarAluno(@Valid @RequestBody AlunoDTO alunoDTO) {
-        return alunoService.createAluno(alunoDTO);
     }
 
     @Operation(summary = "Lista todos os alunos", description = "Retorna uma lista de todos os alunos registados.")

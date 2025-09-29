@@ -1,8 +1,5 @@
 package servicoinscricoes.service;
 
-
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -33,11 +30,13 @@ import java.util.stream.Collectors;
 @Service
 public class InscricaoService {
 
-    @Autowired
-    private InscricaoRepository inscricaoRepository;
+    private final InscricaoRepository inscricaoRepository;
+    private final RestTemplate restTemplate;
 
-    @Autowired
-    private RestTemplate restTemplate;
+    public InscricaoService(InscricaoRepository inscricaoRepository, RestTemplate restTemplate) {
+        this.inscricaoRepository = inscricaoRepository;
+        this.restTemplate = restTemplate;
+    }
 
     public InscricaoDTO createInscricao(InscricaoDTO inscricaoDTO) {
         validarAlunoExistente(inscricaoDTO.alunoId());

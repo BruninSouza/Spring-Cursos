@@ -1,6 +1,5 @@
 package servicocursos.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import servicocursos.dto.AulaDTO;
@@ -22,12 +21,15 @@ import java.util.stream.Collectors;
 @Service
 public class CursoService {
 
-    @Autowired
-    private CursoRepository cursoRepository;
-    @Autowired
-    private ModuloRepository moduloRepository;
-    @Autowired
-    private AulaRepository aulaRepository;
+    private final CursoRepository cursoRepository;
+    private final ModuloRepository moduloRepository;
+    private final AulaRepository aulaRepository;
+
+    public CursoService(CursoRepository cursoRepository, ModuloRepository moduloRepository, AulaRepository aulaRepository) {
+        this.cursoRepository = cursoRepository;
+        this.moduloRepository = moduloRepository;
+        this.aulaRepository = aulaRepository;
+    }
 
     public CursoDTO createCurso(CursoDTO cursoDTO) {
         Curso curso = new Curso();

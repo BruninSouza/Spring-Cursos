@@ -7,7 +7,6 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,11 +26,14 @@ import java.util.UUID;
 @SecurityRequirement(name = "bearerAuth")
 public class InscricaoController {
 
-    @Autowired
-    private InscricaoService inscricaoService;
+    private final InscricaoService inscricaoService;
 
     @Value("${server.port}")
     private String serverPort;
+
+    public InscricaoController(InscricaoService inscricaoService) {
+        this.inscricaoService = inscricaoService;
+    }
 
     @Operation(summary = "Verifica a saúde do serviço")
     @GetMapping("/ping")

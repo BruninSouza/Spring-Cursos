@@ -17,7 +17,7 @@ import servicoalunos.exception.ErroResponse;
 @Tag(name = "Autenticação", description = "Endpoints para registo e login de utilizadores")
 public interface AuthAPI {
 
-    @Operation(summary = "Regista um novo utilizador", description = "Cria uma nova conta de aluno no sistema.")
+    @Operation(summary = "Regista um novo utilizador (aluno)", description = "Cria uma nova conta de aluno no sistema.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Utilizador registado com sucesso"),
             @ApiResponse(responseCode = "422", description = "Dados de registo inválidos",
