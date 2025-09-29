@@ -1,8 +1,0 @@
-servicocursos/repository/ModuloRepository.class
-servicocursos/entity/Aula.class
-servicocursos/ServicoCursosApplication.class
-servicocursos/repository/CursoRepository.class
-servicocursos/entity/Curso.class
-servicocursos/controller/CursoController.class
-servicocursos/entity/Modulo.class
-servicocursos/repository/AulaRepository.class
