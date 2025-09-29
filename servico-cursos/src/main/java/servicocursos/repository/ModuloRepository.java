@@ -1,7 +1,7 @@
 package servicocursos.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import servicocursos.entity.Modulo;
+import servicocursos.model.Modulo;
 
 import java.util.UUID;
 
