@@ -98,3 +98,12 @@ Todos os endpoints para `/api/alunos` (exceto os de autenticação) e `/api/insc
 ```bash
 Authorization: Bearer <SEU_TOKEN_JWT>
 ``` 
+## Documentação da API
+
+Depois de colocar o projeto para "rodar" é possível acessar a documentação dos serviços pelos links:
+
+- Serviço Cursos: http://localhost:8081/swagger-ui/index.html#/
+
+- Serviço Alunos: http://localhost:8082/swagger-ui/index.html#/
+
+- Serviço Inscrições: http://localhost:8083/swagger-ui/index.html#/
